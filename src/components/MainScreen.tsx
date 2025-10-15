@@ -1,13 +1,13 @@
 import manifest from "../data/manifest.json";
 
-import style from "./mainMenu.module.css";
+import style from "./mainScreen.module.css";
 
-interface MainMenuProps {
+interface MainScreenProps {
   readonly onStart: () => void;
   readonly score: number;
 }
 
-export default function MainMenu({ onStart, score }: MainMenuProps) {
+export default function MainScreen({ onStart, score }: MainScreenProps) {
   manifest.categories.forEach((category) => {
     manifest.levels.forEach((level) => {
       console.log(`Category: ${category.name}, Level: ${level.name}`);
