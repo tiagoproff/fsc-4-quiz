@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "let a = {};\nlet b = { key: 'b' };\nlet c = { key: 'c' };\na[b] = 123;\na[c] = 456;\nconsole.log(a[b]);",
+    "options": ["123", "456", "NaN", "undefined"],
+    "answer": "456",
+    "explanation": "Chaves de objeto são convertidas para string '[object Object]'. Então a[b] e a[c] apontam para a mesma chave, o último valor sobrescreve.",
+    "tip": "Objetos como chave são transformados em string."
+  },
+  {
+    "id": 2,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log([] == ![]);",
+    "options": ["true", "false", "undefined", "TypeError"],
+    "answer": "true",
+    "explanation": "[] é falsy coerido para 0, ![] = false → 0, então 0==0 → true.",
+    "tip": "Pegadinha clássica de coerção de tipos."
+  },
+  {
+    "id": 3,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log(function f(){ } instanceof Function);",
+    "options": ["true", "false", "undefined", "TypeError"],
+    "answer": "true",
+    "explanation": "Todas as funções são instâncias de Function.",
+    "tip": "Funções são objetos em JS."
+  },
+  {
+    "id": 4,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log([] + [] + 'foo');",
+    "options": ["'foo'", "''", "'[object Object]foo'", "'foofoo'"],
+    "answer": "'foo'",
+    "explanation": "[]+[] = '' (string vazia), concatenado com 'foo' → 'foo'.",
+    "tip": "Soma de arrays vazios vira string vazia."
+  },
+  {
+    "id": 5,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log('5' - - '5');",
+    "options": ["10", "'10'", "NaN", "55"],
+    "answer": "10",
+    "explanation": "'5'- -'5' = 5 - (-5) = 10. O JS converte strings para números nas operações aritméticas.",
+    "tip": "O duplo sinal negativo é uma pegadinha."
+  },
+  {
+    "id": 6,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log(true + false + true);",
+    "options": ["2", "1", "truefalse", "NaN"],
+    "answer": "2",
+    "explanation": "true=1, false=0, true=1 → 1+0+1=2.",
+    "tip": "Boolean coerido para número em operações aritméticas."
+  },
+  {
+    "id": 7,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log([] == 0 && 0 == []);",
+    "options": ["true", "false", "undefined", "TypeError"],
+    "answer": "true",
+    "explanation": "[] coerido para 0, 0==0 → true, então true && true → true.",
+    "tip": "Pegadinha envolvendo arrays e coerção para número."
+  },
+  {
+    "id": 8,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o valor?",
+    "code": "console.log('foo' || 'bar');",
+    "options": ["'foo'", "'bar'", "undefined", "null"],
+    "answer": "'foo'",
+    "explanation": "|| retorna o primeiro valor truthy, 'foo' é truthy.",
+    "tip": "Operador lógico || retorna o primeiro verdadeiro."
+  },
+  {
+    "id": 9,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log('foo' && 'bar');",
+    "options": ["'foo'", "'bar'", "undefined", "false"],
+    "answer": "'bar'",
+    "explanation": "&& retorna o último valor se todos forem truthy, 'bar' é o último.",
+    "tip": "&& retorna o último valor verdadeiro."
+  },
+  {
+    "id": 10,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log([] + {} + []);",
+    "options": [
+      "'[object Object]'",
+      "'[object Object][]'",
+      "'[object Object]'",
+      "Error"
+    ],
+    "answer": "'[object Object]'",
+    "explanation": "[]+{} → '[object Object]', '[object Object]' + [] → '[object Object]' novamente.",
+    "tip": "Pegadinha envolvendo arrays e objetos."
+  },
+  {
+    "id": 11,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log([] + {} + {});",
+    "options": [
+      "'[object Object][object Object]'",
+      "'[object Object]'",
+      "NaN",
+      "Error"
+    ],
+    "answer": "'[object Object][object Object]'",
+    "explanation": "[]+{}='[object Object]', '[object Object]'+{}='[object Object][object Object]'.",
+    "tip": "Concatenação de objetos vira string."
+  },
+  {
+    "id": 12,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o valor?",
+    "code": "console.log([] == ![]);",
+    "options": ["true", "false", "undefined", "TypeError"],
+    "answer": "true",
+    "explanation": "[] coerido para false, ![] = false → 0==0 → true.",
+    "tip": "Pegadinha clássica de coerção de tipo."
+  },
+  {
+    "id": 13,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log(0 || 1 && 2 || 3);",
+    "options": ["0", "1", "2", "2"],
+    "answer": "2",
+    "explanation": "&& tem precedência sobre ||: 1&&2=2, então 0||2||3 → 2.",
+    "tip": "Pegadinha de precedência de operadores lógicos."
+  },
+  {
+    "id": 14,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log([] == false);",
+    "options": ["true", "false", "undefined", "TypeError"],
+    "answer": "true",
+    "explanation": "[] é convertido para '', que é coerido para 0, false coerido para 0 → 0==0 → true.",
+    "tip": "Array vazio coerido para número."
+  },
+  {
+    "id": 15,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log({}+[]+{}+[]);",
+    "options": [
+      "'[object Object][object Object]'",
+      "'[object Object]'",
+      "NaN",
+      "Error"
+    ],
+    "answer": "'[object Object][object Object]'",
+    "explanation": "O primeiro {} é interpretado como bloco de código, [] vira '', {}+[]='[object Object]', concatenando os restantes → '[object Object][object Object]'.",
+    "tip": "Pegadinha envolvendo interpretação de {}."
+  },
+  {
+    "id": 16,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log(!![] + [] + !![]);",
+    "options": ["'truefalse'", "'truetrue'", "'1true'", "'true1'"],
+    "answer": "'truetrue'",
+    "explanation": "!![] = true, concatenado com [] = '', depois !![] = true → 'true' + '' + 'true' → 'truetrue'.",
+    "tip": "Pegadinha com coerção e arrays vazios."
+  },
+  {
+    "id": 17,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log(+true);",
+    "options": ["1", "true", "NaN", "undefined"],
+    "answer": "1",
+    "explanation": "O operador unário + converte true para número 1.",
+    "tip": "Pegadinha de boolean para número."
+  },
+  {
+    "id": 18,
+    "category": 1,
+    "level": 3,
+    "question": "Qual será o resultado?",
+    "code": "console.log(+'')",
+    "options": ["0", "''", "NaN", "undefined"],
+    "answer": "0",
+    "explanation": "String vazia convertida para número resulta em 0.",
+    "tip": "Pegadinha com conversão de string vazia."
+  },
+  {
+    "id": 19,
+    "category": 1,
+    "level": 3,
+    "question": "O que será impresso?",
+    "code": "console.log('5' + - '2');",
+    "options": ["'5-2'", "'-3'", "'52'", "NaN"],
+    "answer": "'5-2'",
+    "explanation": "O operador unário - converte '2' para número -2, e '5'+(-2) → '5-2' por concatenação de string e número.",
+    "tip": "Sinal negativo com string coerida."
+  }
+]

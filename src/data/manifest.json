@@ -1,0 +1,30 @@
+{
+  "categories": [
+    {
+      "name": "JavaScript",
+      "slug": "javascript"
+    },
+    {
+      "name": "TypeScript",
+      "slug": "typescript"
+    },
+    {
+      "name": "React",
+      "slug": "react"
+    }
+  ],
+  "levels": [
+    {
+      "name": "Fácil",
+      "slug": "easy"
+    },
+    {
+      "name": "Médio",
+      "slug": "medium"
+    },
+    {
+      "name": "Dificil",
+      "slug": "hard"
+    }
+  ]
+}
