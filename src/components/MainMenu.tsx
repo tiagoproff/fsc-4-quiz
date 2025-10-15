@@ -1,3 +1,5 @@
+import manifest from "../data/manifest.json";
+
 import style from "./mainMenu.module.css";
 
 interface MainMenuProps {
@@ -6,6 +8,12 @@ interface MainMenuProps {
 }
 
 export default function MainMenu({ onStart, score }: MainMenuProps) {
+  manifest.categories.forEach((category) => {
+    manifest.levels.forEach((level) => {
+      console.log(`Category: ${category.name}, Level: ${level.name}`);
+    });
+  });
+
   return (
     <div className={style.root}>
       <header className="top-bar">
