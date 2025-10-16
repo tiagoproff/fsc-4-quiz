@@ -1,0 +1,65 @@
+.loader{
+	$loader-size: 4;
+	$animation-duration: 2s;
+	$animation-speed: 10;
+	$animation-scale: 1.4;
+	$loader-color: #ffffff;
+	$loader-text-color: #ffffff;
+	$loader-font-family: 'Arial';
+	
+
+	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	height: ($loader-size * 20px);
+	margin: auto;
+	position: relative;
+	width: ($loader-size * 10px);
+	
+	:global(.loader-item) {
+		background-color: $loader-color;
+		float: left;
+		height: ($loader-size * 1px);
+		margin: ($loader-size / 2) * 1px 0;
+		position: relative;
+		width: ($loader-size * 10px);
+		
+		@for $i from 1 through 10 {
+      $rev: 11 - $i;
+			&:nth-child(#{$rev}){
+				animation: loader-item-#{$i} $animation-duration linear infinite;
+			}	
+		}		
+		
+	}
+	
+	&:after{
+		bottom: ($loader-size*-8px);
+		color: $loader-text-color;
+    content: 'Loading...';
+		font-family: $loader-font-family;
+		font-size: ($loader-size*4px);
+    margin-left: 10px;
+		position: absolute;
+		text-align: center;
+	}
+	
+	@for $i from 0 through 9 {
+		@keyframes loader-item-#{$i+1}{
+			#{$i+1+$i*5 * 1%}{
+			  transform: scaleX(1);
+			}
+      #{$i+1+$i*5+$animation-speed * 1%}{
+				transform: scaleX($animation-scale);
+			}
+			#{$i+1+$i*5+$animation-speed*2 * 1%}{
+				transform: scaleX(1);
+			}
+			100%{
+				transform: scaleX(1);
+			}
+		}	
+	}
+
+}
