@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  width: 100%;
 }
 
 @keyframes logo-spin {
@@ -18,6 +19,11 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+
+body {
+  overflow: hidden;
+  width: 100%;
 }
 
 .card {
