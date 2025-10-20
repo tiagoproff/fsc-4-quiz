@@ -20,7 +20,7 @@
   &:before,
   &:after {
     content: "";
-    border-color: $colorPrimary;
+    border-color: $color-primary;
     border-style: double;
     position: absolute;
     border-radius: $ui-radius;
@@ -89,12 +89,12 @@
   70%,
   74%,
   100% {
-    border-color: $colorPrimary;
+    border-color: $color-primary;
   }
   21%,
   23%,
   71%,
   73% {
-    border-color: $colorNeutral;
+    border-color: $color-neutral;
   }
 }

@@ -1,6 +1,6 @@
 import manifest from "../data/manifest.json";
 
-import style from "./mainScreen.module.css";
+import style from "./mainScreen.module.scss";
 
 interface MainScreenProps {
   readonly onStart: () => void;
@@ -15,20 +15,27 @@ export default function MainScreen({ onStart, score }: MainScreenProps) {
   });
 
   return (
-    <div className={style.root}>
+    <div className={style.main}>
       <header className="top-bar">
         <div>💰 {score}</div>
         <div>Usuário</div>
         <div>⚙️</div>
       </header>
 
-      <main className={style.content}>
+      <main className="content">
         <h1>Show do Milhão (MVP)</h1>
         <img src="/logo.png" alt="logo" />
-        <button onClick={onStart}>Iniciar</button>
+        <a
+          href="#"
+          aria-type="button"
+          className="main-button"
+          onClick={onStart}
+        >
+          Jogar
+        </a>
       </main>
 
-      <nav className={style.bottomBar}>
+      <nav className="bottom-bar">
         <button>Ligas</button>
         <button>Camarim</button>
         <button>Loja</button>
