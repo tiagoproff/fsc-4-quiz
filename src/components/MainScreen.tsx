@@ -1,5 +1,8 @@
 import manifest from "../data/manifest.json";
 
+import mascot from "../assets/main-mascot-md.png";
+import light from "../assets/main-bg-light-md.png";
+
 import style from "./mainScreen.module.scss";
 
 interface MainScreenProps {
@@ -23,8 +26,7 @@ export default function MainScreen({ onStart, score }: MainScreenProps) {
       </header>
 
       <main className="content">
-        <h1>Show do Milhão (MVP)</h1>
-        <img src="/logo.png" alt="logo" />
+        <img src={mascot} alt="Mascote FSC" className="main-mascot" />
         <a
           href="#"
           aria-type="button"
@@ -34,12 +36,7 @@ export default function MainScreen({ onStart, score }: MainScreenProps) {
           Jogar
         </a>
       </main>
-
-      <nav className="bottom-bar">
-        <button>Ligas</button>
-        <button>Camarim</button>
-        <button>Loja</button>
-      </nav>
+      <img src={light} alt="Luz" className="main-light" />
     </div>
   );
 }
