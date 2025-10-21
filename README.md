@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# 🧠 SHOW do FSC - Quiz (React + Vite + Pixi.js)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Pixi.js](https://img.shields.io/badge/Pixi.js-DC1B6E?style=for-the-badge&logo=pixijs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-Currently, two official plugins are available:
+Um quiz inspirado no **Show do Milhão**, desenvolvido em **React + TypeScript + Vite**, com avatar em **Pixi.js v8** e dados armazenados no **LocalStorage**.  
+As perguntas são carregadas dinamicamente conforme categoria e nível de dificuldade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📂 Estrutura
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+src/
+├─ assets/ → Imagens e logo
+├─ components/ → Telas e componentes (Loading, Menu, Game, Avatar etc.)
+├─ data/
+│ ├─ categories.json
+│ ├─ levels.json
+│ └─ questions/{categoria}/{nível}.json
+├─ hooks/ → Hooks personalizados (useLocalStorage)
+├─ utils/ → Funções utilitárias (ex: shuffleArray)
+├─ App.tsx → Controle de rotas/telas
+├─ main.tsx → Ponto de entrada
+└─ index.css → Estilos globais
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Tela de **loading animado**
+- Tela de **aceite de termos**
+- **Menu principal** com navegação inferior
+- Tela de **jogo com timer, avatar e perguntas**
+- Telas de **vitória e derrota**
+- **Pontuação salva no LocalStorage**
+- **Carregamento dinâmico** das perguntas (`import()`)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧩 Tecnologias
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React + TypeScript + Vite
+- Pixi.js v8
+- LocalStorage
+- CSS/Tailwind (opcional)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Rodando o projeto
+
+```bash
+npm install
+npm run dev
+
+Acesse em:
+👉 http://localhost:5173
+
+➕ Como adicionar novas perguntas
+
+Crie um novo diretório em src/data/questions/{categoria}/
+
+Adicione os arquivos:
+
+easy.json
+medium.json
+hard.json
+
+Atualize categories.json com o nome da nova categoria.
+
+As novas perguntas serão carregadas automaticamente quando selecionadas.
 ```
