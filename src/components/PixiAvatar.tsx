@@ -3,12 +3,14 @@ import { Application, Assets, Container } from "pixi.js";
 import { Spine } from "@esotericsoftware/spine-pixi-v8";
 
 interface PixiAvatarProps {
+  readonly className?: string;
   readonly status?: "neutral" | "happy" | "sad" | "surprise";
   readonly width?: number;
   readonly height?: number;
 }
 
 export default function PixiAvatar({
+  className = "",
   status = "neutral",
   width = 200,
   height = 200,
@@ -97,5 +99,7 @@ export default function PixiAvatar({
     })();
   }, [status, width, height]);
 
-  return <div ref={canvasRef} style={{ width, height }} />;
+  return (
+    <div className={className} ref={canvasRef} style={{ width, height }} />
+  );
 }
