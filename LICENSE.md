@@ -1,27 +1,26 @@
 ### MIT License, Copyright © 2024 [Tiago Sacramento](https://github.com/tiagoproff)
 
-Baseado na licença MIT, o usuário tem permissão para usar, copiar, modificar e distribuir o software sob a única condição de que o aviso de direitos autorais e o texto da licença sejam mantidos. O autor original, por sua vez, se isenta de garantias e responsabilidades por quaisquer danos decorrentes do uso do software.
+Under the MIT License, the user is permitted to use, copy, modify, and distribute the software under the sole condition that the copyright notice and license text are preserved. The original author, in turn, disclaims all warranties and liability for any damages arising from the use of the software.
 
 <details>
+<summary>More ...</summary>
 
-<summary>Mais ...</summary>
+#### What the user can do:
 
-#### O que o usuário pode fazer:
+- Use, copy, modify, and merge the code.
+- Distribute, sublicense, and sell copies of the software.
+- Integrate the code into proprietary projects, which means it does not need to be open source.
 
-- Usar, copiar, modificar e mesclar o código.
-- Distribuir, sublicenciar e vender cópias do software.
-- Integrar o código em projetos proprietários, o que significa que ele não precisa ser de código aberto.
+#### User Obligations:
 
-#### Obrigações do usuário:
+- Include the copyright notice and the full text of the license on all copies or substantial portions of the software.
 
-- Incluir o aviso de direitos autorais e o texto completo da licença em todas as cópias ou partes substanciais do software.
+#### Disclaimer:
 
-#### Isenção de responsabilidade:
-
-- O autor original não oferece garantias e não pode ser responsabilizado por problemas que surjam.
+- The original author makes no guarantees and cannot be held responsible for problems that arise.
 
 </details>
 
-#### Referências
+#### References
 
 - [MIT License](https://choosealicense.com/licenses/mit/)

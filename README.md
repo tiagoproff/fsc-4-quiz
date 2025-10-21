@@ -1,10 +1,10 @@
 <a id="readme-top"></a>
-<img src="public/assets/avatar/skeleton.png" alt="Avatar" height="200" align="right">
+<img src="./public/assets/avatar/skeleton.png" alt="Avatar" height="200" align="right">
 
 <div align="left">
-  <h3>SHOW do FSC - Quiz (React + Vite + Pixi.js)</h3>
-  <p>Um quiz inspirado no <strong>Show do Milhão</strong>, desenvolvido em <strong>React</strong> + <strong>TypeScript</strong> + <strong>Vite</strong>, com avatar em <strong>Pixi.js v8</strong> e dados armazenados no <strong>LocalStorage</strong>.  
-  As perguntas são carregadas dinamicamente conforme categoria e nível de dificuldade.</p>
+  <h3>FSC SHOW -Quiz (React + Vite + Pixi.js)</h3>
+  <p>A quiz inspired by <strong>Show do Milhão</strong>, developed in <strong>React</strong> + <strong>TypeScript</strong> + <strong>Vite</strong>, with avatar in <strong>Pixi.js v8</strong> and data stored in <strong>LocalStorage</strong>.  
+  Questions are loaded dynamically according to category and difficulty level.</p>
 </div>
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -12,117 +12,122 @@
 ![Pixi.js](https://img.shields.io/badge/Pixi.js-DC1B6E?style=for-the-badge&logo=pixijs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
+<p>Read on:
+  <a align="right" href="./README-ptBR.md">portuguese 🇧🇷</a>
+</p>
+
 ---
 
-### 📂 Estrutura
+### 📂 Structure
 
+```
 src/
-├─ assets/ → Imagens e logo
-├─ components/ → Telas e componentes (Loading, Menu, Game, Avatar etc.)
-├─ data/
-│ ├─ manisfest.json → Contém categorias e levels
-│ └─ questions/{categoria}/{nível}.json
-├─ hooks/ → Hooks personalizados (useLocalStorage)
-├─ utils/ → Funções utilitárias (ex: shuffleArray)
-├─ App.tsx → Controle de rotas/telas
-├─ main.tsx → Ponto de entrada
-└─ index.css → Estilos globais
+├─ assets/→ Images and logo
+├─ components/→ Screens and components (Loading, Menu, Game, Avatar, etc.)
+├─ date/
+│ ├─ manisfest.json → Contains categories and levels
+│ └─ questions/{category}/{level}.json
+├─ hooks/→ Custom hooks (useLocalStorage)
+├─ utils/→ Utility functions (e.g. shuffleArray)
+├─ App.tsx → Route/screen control
+├─ main.tsx → Entry point
+└─ index.css → Global styles
+```
 
 ---
 
-### ⚙️ Funcionalidades
+### ⚙️ Features
 
-- Tela de **loading animado**
-- Tela de **aceite de termos**
-- **Menu principal** com navegação inferior
-- Tela de **jogo com timer, avatar e perguntas**
-- Telas de **vitória e derrota**
-- **Pontuação salva no LocalStorage**
-- **Carregamento dinâmico** das perguntas (`import()`)
+- **Animated loading screen**
+- **acceptance of terms screen**
+- **Main menu** with bottom navigation
+- **Game screen with timer, avatar and questions**
+- **Victory and defeat** screens
+- **Score saved in LocalStorage**
+- **Dynamic loading** of questions (`import()`)
 
 ---
 
-### 🧩 Tecnologias
+### 🧩 Technologies
 
 - React + TypeScript + Vite
 - Pixi.js v8
 - LocalStorage
-- SASS/Tailwind (opcional)
+- SASS/Tailwind (optional)
 
 ---
 
-### 🚀 Rodando o projeto
+### 🚀 Running the project
 
 ```bash
 npm install
 npm run dev
 
-Acesse em:
+Access at:
 👉 http://localhost:5173
 
-➕ Como adicionar novas perguntas
+➕ How to add new questions
 
-Crie um novo diretório em src/data/questions/{categoria}/
+Create a new directory at src/data/questions/{category}/
 
-Adicione os arquivos:
+Add the files:
 
 easy.json
 medium.json
 hard.json
 
-Atualize categories em manisfest.json com o nome e slug da nova categoria.
+Update categories in manifest.json with the new category name and slug.
 
-As novas perguntas serão carregadas automaticamente quando selecionadas.
+New questions will be loaded automatically when selected.
 ```
 
-#### Ajustes e melhorias
+#### Adjustments and improvements
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [x] Adicionar Avatar em Pixi.js
-- [x] Adicionar
-- [x] Tarefa 3
-- [ ] Corrigir exibição do time
-- [ ] Persistir termos
-- [ ] Persistir dados no LocalStorage
+- [x] Add Avatar in Pixi.js
+- [x] Add Splash
+- [x] Add Main Screen
+- [ ] Fix team display
+- [ ] Persist terms
+- [ ] Persist data in LocalStorage
 
 <details>
-
 <summary>...</summary>
 
-- [ ] Adicionar ajuda, placas
-- [ ] Adicionar tags: errar, parar, acertar
-- [ ] Adicionar universitários
-- [ ] Adicionar animações do avatar
-- [ ] Adicionar audios
-- [ ] Atualizar tela de parabenização
-- [ ] Adicionar
-- [ ] Adicionar novas categorias
-- [ ] Adicionar rank
-- [ ] Adicionar logotipo
+- [ ] Add help, signs
+- [ ] Add tags: make mistakes, stop, hit
+- [ ] Add university students
+- [ ] Add avatar animations
+- [ ] Add audios
+- [ ] Update congratulations screen
+- [ ] To add
+- [ ] Add new categories
+- [ ] Add rank
+- [ ] Add logo
 
 </details>
 
-## Contribuidores
+### Contributors
 
-Agradeço a todos que tornaram este projeto real! 🙏
+I thank everyone who made this project real! 🙏
 
 <table>
   <tr>
     <td align="center">
-        <img src="src/assets/contributors/maurice-moss.png" width="60px;" alt="Foto do Maurice Moss"/>
+        <img src="./src/assets/contributors/maurice-moss.png" width="60px;" alt="Photo of Maurice Moss"/>
     </td>
     <td align="center">
-        <img src="src/assets/contributors/jimmy-o-yang.png" width="60px;" alt="Foto do Jimmy O. Yang"/>
+        <img src="./src/assets/contributors/jimmy-o-yang.png" width="60px;" alt="Photo of Jimmy O. Yang"/>
     </td>
     <td align="center">
-        <img src="src/assets/contributors/howard-wolowitz.png" width="60px;" alt="Foto do Howard Wolowitz"/>
+        <img src="./src/assets/contributors/howard-wolowitz.png" width="60px;" alt="Photo of Howard Wolowitz"/>
     </td>
   </tr>
 </table>
 
-### 📝 Licença
+### 📝 License
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+This project is under license. See the [LICENSE](LICENSE.md) file for more details.
 
 <p align="right"><a href="#readme-top">☝️</a></p>
