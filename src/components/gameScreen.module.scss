@@ -5,6 +5,8 @@
   gap: 2rem;
   height: 100vh;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 20px;
 
   :global(.main) {
     display: flex;

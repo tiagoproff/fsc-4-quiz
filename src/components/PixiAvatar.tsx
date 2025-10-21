@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { Application, Assets, Container } from "pixi.js";
 import { Spine } from "@esotericsoftware/spine-pixi-v8";
 
+import styles from "./pixiAvatar.module.scss";
+
 interface PixiAvatarProps {
   readonly className?: string;
   readonly status?: "neutral" | "happy" | "sad" | "surprise";
@@ -13,7 +15,7 @@ export default function PixiAvatar({
   className = "",
   status = "neutral",
   width = 200,
-  height = 200,
+  height = 380,
 }: PixiAvatarProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<Application>(null);
@@ -27,6 +29,7 @@ export default function PixiAvatar({
         height,
         backgroundAlpha: 0,
         antialias: true,
+        resolution: window.devicePixelRatio,
       });
 
       if (canvasRef.current) {
@@ -42,51 +45,35 @@ export default function PixiAvatar({
       const loadAvatar = async () => {
         await Assets.load([
           {
-            alias: "spineSkeleton",
-            src: "https://raw.githubusercontent.com/pixijs/spine-v8/main/examples/assets/spineboy-pro.skel",
+            alias: "avatar-data",
+            src: "../assets/avatar/skeleton.json",
           },
           {
-            alias: "spineAtlas",
-            src: "https://raw.githubusercontent.com/pixijs/spine-v8/main/examples/assets/spineboy-pma.atlas",
-          },
-          {
-            alias: "sky",
-            src: "https://pixijs.com/assets/tutorials/spineboy-adventure/sky.png",
-          },
-          {
-            alias: "background",
-            src: "https://pixijs.com/assets/tutorials/spineboy-adventure/background.png",
-          },
-          {
-            alias: "midground",
-            src: "https://pixijs.com/assets/tutorials/spineboy-adventure/midground.png",
-          },
-          {
-            alias: "platform",
-            src: "https://pixijs.com/assets/tutorials/spineboy-adventure/platform.png",
+            alias: "avatar-atlas",
+            src: "../assets/avatar/skeleton.atlas",
           },
         ]);
 
         const spineBoy = {
           view: new Container(),
-
-          spine: Spine.from({
-            skeleton: "spineSkeleton",
-            atlas: "spineAtlas",
-          }),
+          spine: Spine.from({ skeleton: "avatar-data", atlas: "avatar-atlas" }),
         };
 
         spineBoy.view.addChild(spineBoy.spine);
 
         spineBoy.view.x = app.screen.width / 2;
-        spineBoy.view.y = app.screen.height - 80;
+        spineBoy.view.y = app.screen.height / 2;
         spineBoy.spine.scale.set(0.5);
+
+        spineBoy.spine.x = app.screen.width / 2 - spineBoy.spine.width / 2;
+        spineBoy.spine.y =
+          app.screen.height / 2 - (spineBoy.spine.height / 2) * 0.5;
 
         container.addChild(spineBoy.view);
 
         let t = 0;
         app.ticker.add(() => {
-          t += 0.05;
+          t += 0.025;
           spineBoy.view.y = height / 2 + Math.sin(t) * 5;
         });
       };
@@ -100,6 +87,10 @@ export default function PixiAvatar({
   }, [status, width, height]);
 
   return (
-    <div className={className} ref={canvasRef} style={{ width, height }} />
+    <div
+      className={`${className} ${styles.avatar}`}
+      ref={canvasRef}
+      style={{ width, height }}
+    />
   );
 }
