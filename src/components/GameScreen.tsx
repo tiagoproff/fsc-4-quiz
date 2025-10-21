@@ -7,12 +7,13 @@ import { loadQuestions } from "../utils/loadQuestions";
 
 import type { Question } from "../interfaces/types";
 
+import styles from "./gameScreen.module.scss";
+
 interface GameScreenProps {
   readonly onWin: (earned: number) => void;
   readonly onLose: (earned: number) => void;
 }
 
-//const MAX_QUESTIONS = 10;
 const MAX_TIME = 40;
 const questionsData = await loadQuestions("javascript", "easy");
 
@@ -89,20 +90,20 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
   const score = Math.floor(savedScore);
 
   return (
-    <div className="screen column-between">
+    <div className={styles.game}>
       <header className="topbar">
         <div>Tempo: {timer}s</div>
         <div>Prêmio: R$ {score}</div>
       </header>
 
-      <main className="center-column">
-        <PixiAvatar status={avatarStatus} />
-        <div className="question-card">
+      <main className="main">
+        <div className="question-content">
           <h2>{currentQuestion.question}</h2>
           <pre>{currentQuestion.code}</pre>
-          <div className="options">
+          <div className="question-alternatives">
             {currentQuestion.options.map((option, optionIndex) => (
               <button
+                className="question-alternative"
                 key={optionIndex}
                 disabled={disableAnswers}
                 onClick={() => handleAnswer(option)}
@@ -113,24 +114,23 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
           </div>
           <p className="tip">Dica: {currentQuestion.tip}</p>
         </div>
+        <PixiAvatar className="avatar" status={avatarStatus} />
       </main>
 
       <footer className="bottombar">
         <button
           onClick={() => {
-            setIndex((prev) => Math.max(0, prev - 1));
+            console.log("Pular");
           }}
         >
-          Anterior
+          Pular
         </button>
         <button
           onClick={() => {
-            setIndex((prev) =>
-              Math.min(questionsShuffled.length - 1, prev + 1)
-            );
+            console.log("Cartas");
           }}
         >
-          Próxima
+          Cartas
         </button>
       </footer>
     </div>
