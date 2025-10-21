@@ -1,17 +1,18 @@
+import styles from "./looseScreen.module.scss";
+
 interface LooseScreenProps {
   readonly onRestart: () => void;
 }
 
 export default function LooseScreen({ onRestart }: LooseScreenProps) {
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold">Você Perdeu</h1>
-      <button
-        onClick={onRestart}
-        className="mt-6 px-6 py-3 bg-red-500 text-white rounded"
-      >
-        Tentar novamente
-      </button>
+    <div className={styles.loose}>
+      <div className="loose-content">
+        <h1 className="loose-inner">Você Perdeu</h1>
+        <button onClick={onRestart} className="loose-button">
+          Tentar novamente
+        </button>
+      </div>
     </div>
   );
 }
