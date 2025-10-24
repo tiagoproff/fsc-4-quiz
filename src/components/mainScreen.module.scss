@@ -1,5 +1,5 @@
 $color-neon: $color-primary;
-$color-neon-secondary: #fdf998;
+$color-neon-secondary: #edb754;
 $color-bg: $color-secondary;
 $color-white: rgba(255, 255, 255, 1);
 
@@ -58,42 +58,40 @@ $color-white: rgba(255, 255, 255, 1);
 
     position: relative;
 
+    &::after,
     &::before {
-      pointer-events: none;
       content: "";
+      height: 100%;
+      pointer-events: none;
       position: absolute;
-      background: $color-neon;
+      width: 100%;
+    }
+
+    &::before {
+      background: $color-neon-secondary;
       top: 120%;
       left: 0;
-      width: 100%;
-      height: 100%;
-
       transform: perspective(1.2em) rotateX(40deg) scale(1.5, 0.5);
       filter: blur(1.15em);
       opacity: 0.7;
-
       transition: transform 0.5s linear;
     }
 
     &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      box-shadow: 0 0 4em 0.6em $color-neon,
-        0 0 1em 0.2em rgba($color-neon, 0.5);
+      border-radius: 0.15em;
+      inset: 0;
+      box-shadow: 0 0 4em 0.6em $color-neon-secondary,
+        0 0 1em 0.2em rgba($color-neon-secondary, 0.5);
       opacity: 0;
-      background-color: $color-neon;
+      background-color: $color-neon-secondary;
       z-index: -1;
       transition: opacity 0.5s linear;
     }
 
     &:hover,
     &:focus {
-      color: $color-white;
-      text-shadow: none;
+      color: $color-neon;
+      text-shadow: 0 0 0.125em rgba($color-neon, 0.22), 0 0 0.5em currentColor;
     }
 
     &:hover::before,

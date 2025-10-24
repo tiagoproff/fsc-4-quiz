@@ -32,6 +32,8 @@
     justify-content: center;
     color: #fff;
     font-weight: bold;
+    width: 100%;
+    padding-right: 16%;
 
     &::before {
       position: absolute;
@@ -70,7 +72,7 @@
     margin: 0 auto 60px;
     left: 2px;
     position: relative;
-    padding: 8px;
+    padding: 16px 8px;
     border-radius: 4px;
   }
 
