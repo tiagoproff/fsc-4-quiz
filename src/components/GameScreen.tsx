@@ -8,6 +8,7 @@ import { loadQuestions } from "../utils/loadQuestions";
 import type { Question } from "../interfaces/types";
 
 import styles from "./gameScreen.module.scss";
+import CountDown from "./CountDown";
 
 interface GameScreenProps {
   readonly onWin: (earned: number) => void;
@@ -91,11 +92,6 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
 
   return (
     <div className={styles.game}>
-      <header className="topbar">
-        <div>Tempo: {timer}s</div>
-        <div>Prêmio: R$ {score}</div>
-      </header>
-
       <main className="main">
         <div className="question-content">
           <h2>{currentQuestion.question}</h2>
@@ -114,7 +110,15 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
           </div>
           <p className="tip">Dica: {currentQuestion.tip}</p>
         </div>
-        <PixiAvatar className="avatar" status={avatarStatus} />
+        <div className="topbar-container">
+          <div className="topbar">
+            <div>Prêmio: R$ {score}</div>
+            <div className="countdown">
+              <CountDown currentTimer={timer} totalTimer={MAX_TIME} />
+            </div>
+          </div>
+          <PixiAvatar className="avatar" status={avatarStatus} />
+        </div>
       </main>
 
       <footer className="bottombar">

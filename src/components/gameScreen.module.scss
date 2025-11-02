@@ -4,9 +4,16 @@
   align-items: center;
   gap: 2rem;
   height: 100vh;
-  justify-content: center;
-  box-sizing: border-box;
   padding: 20px;
+
+  :global(.topbar) {
+    width: 100%;
+
+    :global(.countdown) {
+      position: absolute;
+      right: 28px;
+    }
+  }
 
   :global(.main) {
     display: flex;
