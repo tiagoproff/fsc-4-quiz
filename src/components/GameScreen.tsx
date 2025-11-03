@@ -94,11 +94,14 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
       <div className="question">
         <h2>{currentQuestion.question}</h2>
         <pre>{currentQuestion.code}</pre>
-        <div className="question-alternatives">
-          {currentQuestion.options.map((option, optionIndex) => (
+        <div
+          key={`question-${index}-alternatives`}
+          className="question-alternatives"
+        >
+          {currentQuestion.options.map((option) => (
             <button
               className="question-alternative"
-              key={optionIndex}
+              key={currentQuestion.id}
               disabled={disableAnswers}
               onClick={() => handleAnswer(option)}
             >
