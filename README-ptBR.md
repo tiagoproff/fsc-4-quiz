@@ -12,6 +12,8 @@
 ![Pixi.js](https://img.shields.io/badge/Pixi.js-DC1B6E?style=for-the-badge&logo=pixijs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
+<small>Projeto desenvolvido para a 4ª edição do [FSC](https://www.fullstackclub.com.br).</small>
+
 <p>Leia em:
   <a align="right" href="./README-ptBR.md">inglês 🇺🇸</a>
 </p>
@@ -88,7 +90,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Adicionar Avatar em Pixi.js
 - [x] Adicionar Splash
 - [x] Adicionar Tela principal
-- [ ] Corrigir exibição do time
+- [x] Corrigir exibição do time
 - [ ] Persistir termos
 - [ ] Persistir dados no LocalStorage
 
@@ -101,7 +103,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Adicionar animações do avatar
 - [ ] Adicionar audios
 - [ ] Atualizar tela de parabenização
-- [ ] Adicionar
 - [ ] Adicionar novas categorias
 - [ ] Adicionar rank
 - [ ] Adicionar logotipo

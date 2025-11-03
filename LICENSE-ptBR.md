@@ -24,3 +24,5 @@ Baseado na licença MIT, o usuário tem permissão para usar, copiar, modificar 
 #### Referências
 
 - [Licença MIT](https://choosealicense.com/licenses/mit/)
+
+<p align="right"><a href="./README-ptBR.md">👈</a></p>
