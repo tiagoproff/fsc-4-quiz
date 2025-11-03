@@ -1,28 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+
 .game {
+  font-family: "Orbitron", monospace;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 2rem;
   height: 100vh;
   padding: 20px;
 
-  :global(.topbar) {
-    width: 100%;
-
-    :global(.countdown) {
-      position: absolute;
-      right: 28px;
-    }
-  }
-
-  :global(.main) {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  :global(.question-content) {
+  :global(.question) {
     display: flex;
     flex-direction: column;
     max-width: 460px;
@@ -39,7 +25,8 @@
     justify-content: center;
     color: #fff;
     font-weight: bold;
-    width: 100%;
+    width: 92%;
+    padding-left: 8%;
     padding-right: 16%;
 
     &::before {
@@ -55,21 +42,6 @@
       transform: skewX(12deg);
       inset: 0;
       z-index: -1;
-    }
-
-    & .t::after {
-      position: absolute;
-      top: -1em;
-      left: -1em;
-      padding: 0.2em;
-      width: 100%;
-      height: 100%;
-      border-radius: 0.4em;
-      transform: rotate(90deg);
-      box-shadow: 0 0 0 0.1em currentcolor;
-      background: currentcolor content-box;
-      color: #d8d8d873;
-      content: "";
     }
   }
 
@@ -108,7 +80,6 @@
     box-shadow: 0 0 18px rgba($color-primary, 0.5),
       0 5px 4px rgba($color-primary, 0.5), inset 0 1px #ffeca8,
       inset 0 -1px #ffeca8;
-    color: #a8ecff;
 
     &:hover {
       background-color: $color-secondary;
@@ -139,6 +110,68 @@
       font-weight: bold;
       left: 1.3em;
       position: absolute;
+    }
+  }
+
+  :global(.aside) {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    :global(.avatar) {
+      padding: 0;
+      margin: 0;
+
+      height: auto !important;
+      max-height: 100%; /* ensures that it doesn't overflow */
+      max-width: 100%; /* ensures that it doesn't overflow */
+      width: 100% !important;
+
+      user-select: none;
+    }
+  }
+
+  :global(.aside-topbar) {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 68px 48px 0 78px;
+    position: absolute;
+    width: 100%;
+
+    :global(.score) {
+      text-shadow: 0 0 10px #b44bdd, 0 0 20px #b44bdd, 0 0 30px #b44bdd;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 0 18px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+
+      &::before {
+        content: "";
+        box-shadow: 0 0 70px #b44bdd38, 0 5px 20px #b44bdd38,
+          inset 0 0px 4px #b44bdd, inset 0 0px 4px #b44bdd;
+        height: calc(100% + 4px);
+        left: -30px;
+        padding: 0 30px;
+        position: absolute;
+        top: -2px;
+        width: 100%;
+      }
+
+      &::after {
+        content: " XP";
+        font-weight: normal;
+      }
+    }
+
+    :global(.countdown) {
+      right: 28px;
     }
   }
 }

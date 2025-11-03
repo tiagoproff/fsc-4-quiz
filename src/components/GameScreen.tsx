@@ -32,7 +32,6 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
   const [disableAnswers, setDisableAnswers] = useState(false);
 
   useEffect(() => {
-    console.log("Questions Shuffled:", questionsShuffled);
     setTimer(MAX_TIME);
     setDisableAnswers(false);
     setAvatarStatus("neutral");
@@ -92,51 +91,49 @@ export default function GameScreen({ onWin, onLose }: GameScreenProps) {
 
   return (
     <div className={styles.game}>
-      <main className="main">
-        <div className="question-content">
-          <h2>{currentQuestion.question}</h2>
-          <pre>{currentQuestion.code}</pre>
-          <div className="question-alternatives">
-            {currentQuestion.options.map((option, optionIndex) => (
-              <button
-                className="question-alternative"
-                key={optionIndex}
-                disabled={disableAnswers}
-                onClick={() => handleAnswer(option)}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-          <p className="tip">Dica: {currentQuestion.tip}</p>
+      <div className="question">
+        <h2>{currentQuestion.question}</h2>
+        <pre>{currentQuestion.code}</pre>
+        <div className="question-alternatives">
+          {currentQuestion.options.map((option, optionIndex) => (
+            <button
+              className="question-alternative"
+              key={optionIndex}
+              disabled={disableAnswers}
+              onClick={() => handleAnswer(option)}
+            >
+              {option}
+            </button>
+          ))}
         </div>
-        <div className="topbar-container">
-          <div className="topbar">
-            <div>Prêmio: R$ {score}</div>
-            <div className="countdown">
-              <CountDown currentTimer={timer} totalTimer={MAX_TIME} />
-            </div>
-          </div>
-          <PixiAvatar className="avatar" status={avatarStatus} />
-        </div>
-      </main>
+        <p className="question-tip">Dica: {currentQuestion.tip}</p>
 
-      <footer className="bottombar">
-        <button
-          onClick={() => {
-            console.log("Pular");
-          }}
-        >
-          Pular
-        </button>
-        <button
-          onClick={() => {
-            console.log("Cartas");
-          }}
-        >
-          Cartas
-        </button>
-      </footer>
+        <footer className="bottombar">
+          <button
+            onClick={() => {
+              console.log("Pular");
+            }}
+          >
+            Pular
+          </button>
+          <button
+            onClick={() => {
+              console.log("Cartas");
+            }}
+          >
+            Cartas
+          </button>
+        </footer>
+      </div>
+      <div className="aside">
+        <div className="aside-topbar">
+          <div className="score">{score}</div>
+          <div className="countdown">
+            <CountDown currentTimer={timer} totalTimer={MAX_TIME} />
+          </div>
+        </div>
+        <PixiAvatar className="avatar" status={avatarStatus} />
+      </div>
     </div>
   );
 }
