@@ -129,8 +129,14 @@
       max-height: 100%; /* ensures that it doesn't overflow */
       max-width: 100%; /* ensures that it doesn't overflow */
       width: 100% !important;
-
       user-select: none;
+
+      canvas {
+        height: auto;
+        max-height: 100%; /* ensures that it doesn't overflow */
+        max-width: 100%;
+        width: auto;
+      }
     }
   }
 
